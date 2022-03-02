@@ -75,15 +75,15 @@ pipeline {
 
             }
         } 
-     /*    stage('Run docker image')
+         stage('Run docker image')
         {
             steps{
-                sh "docker run $registry:$BUILD_NUMBER ls -ltr" 
-                
+
+                sh "docker run -d -p 70:80 $registry:$BUILD_NUMBER "
 
             }
         }
-        stage('Cleaning up-Final') { 
+       /* stage('Cleaning up-Final') { 
 
             steps { 
 
