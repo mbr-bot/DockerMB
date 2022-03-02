@@ -24,7 +24,7 @@ pipeline {
 
         } 
 
-        stage('Building our image') { 
+        stage('Building  image') { 
 
             steps { 
 
@@ -38,7 +38,7 @@ pipeline {
 
         }
 
-        stage('Deploy our image') { 
+        stage('Deploy  image') { 
 
             steps { 
 
@@ -62,7 +62,7 @@ pipeline {
 
                 //sh "docker rmi $registry:$BUILD_NUMBER" 
                 sh '''docker rmi $registry:$BUILD_NUMBER
-                      docker rmi busybox -f'''
+                      '''
 
             }
 
@@ -75,7 +75,7 @@ pipeline {
 
             }
         } 
-         stage('Run docker image')
+     /*    stage('Run docker image')
         {
             steps{
                 sh "docker run $registry:$BUILD_NUMBER ls -ltr" 
@@ -93,7 +93,7 @@ pipeline {
 
             }
 
-        }
+        }*/
 
     }
 
